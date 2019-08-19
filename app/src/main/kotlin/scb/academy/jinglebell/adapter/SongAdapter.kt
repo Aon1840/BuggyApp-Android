@@ -26,11 +26,12 @@ class SongAdapter(private val listener: OnSongClickListener)
     }
 
     override fun getItemCount(): Int {
-        return if (songs.count() == 0) {
-            0
-        } else {
-            songs.count() + 1
-        }
+//        return if (songs.count() == 0) {
+//            0
+//        } else {
+//            songs.count() + 1
+//        }
+        return songs.size
     }
 
     fun submitList(list: List<Song>) {
