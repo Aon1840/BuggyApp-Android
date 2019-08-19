@@ -1,6 +1,7 @@
 package scb.academy.jinglebell.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,6 +37,9 @@ class SongListFragment : Fragment(), OnSongClickListener {
 
         override fun onResponse(call: Call<SongSearchResult>, response: Response<SongSearchResult>) {
             context?.showToast("Success")
+            val songs = response.body()
+            Log.d("---- hello from songs: ",songs.toString())
+//            songAdapter.submitList(songs)
         }
     }
 

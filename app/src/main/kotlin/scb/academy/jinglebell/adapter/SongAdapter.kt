@@ -15,8 +15,7 @@ class SongAdapter(private val listener: OnSongClickListener)
     /**
      * List songs of artris
      */
-    val songs: List<Song>
-        get() = _songs
+    val songs: List<Song> get() = _songs
 
     private var _songs: List<Song> = listOf()
 
@@ -36,6 +35,7 @@ class SongAdapter(private val listener: OnSongClickListener)
 
     fun submitList(list: List<Song>) {
         _songs = list
+
         notifyDataSetChanged()
     }
 
