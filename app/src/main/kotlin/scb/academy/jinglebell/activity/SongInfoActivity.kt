@@ -3,6 +3,7 @@ package scb.academy.jinglebell.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -46,6 +47,7 @@ class SongInfoActivity : AppCompatActivity() {
 
         val song = intent.getParcelableExtra<Song>(EXTRA_SONG) ?: return
         showSongInformation(song)
+        Log.d("------ from activity: ",song.toString())
     }
 
     private fun showSongInformation(song: Song) {

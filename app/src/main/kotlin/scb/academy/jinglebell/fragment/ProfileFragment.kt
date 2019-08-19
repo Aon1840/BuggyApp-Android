@@ -46,9 +46,6 @@ class ProfileFragment : Fragment() {
                 val nickname = edtNickname.text.toString()
                 val intent = Intent(getActivity(), WelcomeActivity::class.java)
                 intent.putExtra("nickname",nickname)
-//                val bundle = Bundle()
-//                bundle.putString("nickname",nickname)
-//                profileFragment.arguments = bundle
 
                 startActivity(intent)
             }

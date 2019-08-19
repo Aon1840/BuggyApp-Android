@@ -14,6 +14,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import scb.academy.jinglebell.R
+import scb.academy.jinglebell.activity.SongInfoActivity
+//import scb.academy.jinglebell.activity.SongInfoActivity.Companion.startActivity2
 import scb.academy.jinglebell.adapter.OnSongClickListener
 import scb.academy.jinglebell.adapter.SongAdapter
 import scb.academy.jinglebell.extension.showToast
@@ -38,8 +40,9 @@ class SongListFragment : Fragment(), OnSongClickListener {
         override fun onResponse(call: Call<SongSearchResult>, response: Response<SongSearchResult>) {
             context?.showToast("Success")
             val songs = response.body()
+            songAdapter.submitList(songs!!.results)
             Log.d("---- hello from songs: ",songs.toString())
-//            songAdapter.submitList(songs)
+
         }
     }
 
@@ -60,6 +63,10 @@ class SongListFragment : Fragment(), OnSongClickListener {
     }
 
     override fun onSongClick(song: Song) {
+        this.context!!.let {
 
+            SongInfoActivity.startActivity(it,song)
+            Log.d("---- song", song.toString())
+        }
     }
 }
